@@ -18,6 +18,7 @@ namespace WebProductos.Models
         public DateTime FechaIngreso { get; set; }
 
         public bool Disponible { get; set; }
+        public string Vendedor { get; set; }
 
         public string Tienda { get; set; }
 
