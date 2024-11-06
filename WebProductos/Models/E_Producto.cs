@@ -19,6 +19,8 @@ namespace WebProductos.Models
 
         public bool Disponible { get; set; }
 
+        public string Tienda { get; set; }
+
         //Propiedad de solo lectura
         public string DisponibleDescripcion
         {
