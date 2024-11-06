@@ -21,6 +21,8 @@ namespace WebProductos.Models
         public string Vendedor { get; set; }
 
         public string Tienda { get; set; }
+        public string Propiedad1 { get; set; }
+        public string Propiedad3 { get; set; }
 
         //Propiedad de solo lectura
         public string DisponibleDescripcion
