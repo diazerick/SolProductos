@@ -1,0 +1,99 @@
+﻿@using WebProductos.Models
+
+@model List<E_Producto>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Principal</title>
+    @*<style>
+        
+        body {
+            background-color: green;
+        }
+
+        h1, a {
+            color: white;
+        }
+
+        table a {
+            color: red;
+        }
+
+        .boton {
+            /*Propiedades*/
+            background-color: blue; /*color de fondo*/
+            color: white; /*color de la letra*/
+            padding: 15px; /* espacio de relleno */
+            border-radius: 30px; /*bordes circulares*/
+        }
+        
+    </style>*@
+
+    <!-- Agregando referencias a archivos de bootstrap -->
+    <link href="~/Content/bootstrap.css" rel="stylesheet"/>
+    <script src="~/Scripts/bootstrap.js"></script>
+    
+</head>
+<body>
+    <div class="container">
+        <h1 class="display-3">Inventario</h1>
+
+        <a href="/Producto/IrAgregar" class="btn btn-warning">Nuevo Producto</a>
+
+        <h3>@TempData["mensaje"]</h3>
+
+        <table class="table table-bordered table-hover table-success border-success">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Fecha de Ingreso</th>
+                    <th>Fecha Caducidad</th>
+                    <th>¿Esta Disponible?</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (E_Producto producto in Model)
+                {
+                    <tr>
+                        <td>@producto.IdProducto</td>
+                        <td>@producto.Descripcion</td>
+                        <td>@producto.Precio.ToString("c")</td>
+                        <td>@producto.FechaIngreso.ToString("dd/MM/yyyy")</td>
+                        <td>@producto.FechaCaducidad.ToString("dd/MM/yyyy")</td>
+                        <td>@producto.DisponibleDescripcion</td>
+                        <td>
+                            <a href="/Producto/IrEditar?idProducto=@producto.IdProducto" class="btn btn-info">Editar</a>
+                            <a href="/Producto/Eliminar?idProducto=@producto.IdProducto" class="btn btn-danger">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        @*<div class="row" style="border: 2px red solid; height:250px;">
+            <div class="col-2" style="border: 2px blue solid; height:250px;">
+            </div>
+            <div class="col-8" style="border: 2px green solid; height:250px;">
+            </div>
+            <div class="col-2" style="border: 2px yellow solid; height:250px;">
+            </div>
+        </div>
+        <div class="row" style="border: 2px red solid; height:250px;">
+            <div class="col-6" style="border: 2px blue solid; height:250px;">
+            </div>
+            <div class="col-6" style="border: 2px green solid; height:250px;">
+            </div>
+        </div>*@
+    </div>
+</body>
+</html>

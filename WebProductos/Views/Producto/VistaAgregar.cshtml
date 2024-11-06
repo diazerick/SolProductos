@@ -1,0 +1,47 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>VistaAgregar</title>
+</head>
+<body>
+    <div>
+        <h1>Registrar Producto</h1>
+
+        
+        <form action="/Producto/Agregar" method="post">
+            <label>Descripción:</label>
+            <input type="text" name="Descripcion" />
+            <br /><br />
+
+            <label>Precio:</label>
+            <input type="text" name="Precio" />
+            <br /><br />
+
+            <label>Fecha Ingreso:</label>
+            <input type="date" name="FechaIngreso" />
+            <br /><br />
+
+            <!-- Radio Buttons -->
+            <label>¿Esta Disponible?</label>
+            <div>
+                <input type="radio" name="Disponible" value="true" />
+                <label>Si</label>
+            </div>
+            <div>
+                <input type="radio" name="Disponible" value="false" />
+                <label>No</label>
+            </div>
+
+            <br />
+            <input type="submit" value="Crear" />
+        </form>
+    </div>
+</body>
+</html>
